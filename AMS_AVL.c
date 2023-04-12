@@ -611,11 +611,6 @@ student_record* addstree(student_record* ptr,student_record* temp,int key)
     }
 
     return ptr;
-    
-   
-  
-   
-  
 }
 
 //function addatree
@@ -1154,35 +1149,12 @@ void insertStudentRecord()
         strcpy(temp->status1,Astatus);
         temp->subroot=addSubtree(temp->subroot,temp->subroot,nptr);
     } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
         }
         else
         {
             //update the already present student record
             printf("STUDENT RECORD ALREADY EXISTS \n");
-
-
-            
         }
-
-       
-       
-
 
 }
 
@@ -1348,54 +1320,54 @@ void submittingAssignments(student_record* ptr)
 
 }
 
-// bool checkingStatus(Assignment_Node* ptr)
-// {
-//     printf("HI");
-//     Queue q;
-//     int flag=1;
-//     bool ans;
-//     Assignment_Node* p;
+//Buffer function to arrange nodes according to decreasing order of total marks
+bool checkingStatus(Assignment_Node* ptr)
+{
+    printf("HI");
+    Queue q;
+    int flag=1;
+    bool ans;
+    Assignment_Node* p;
    
-//     bool ans2;
-//      char sttt[20]="evaluated";
-//     insertQueue(&q,ptr);
-//     while(!isQueueEmpty(&q)&& flag==1)
-//     {
-//         p=DeleteQueue(&q);
-//         if(strcmp(p->status,sttt)!=0)
-//         {
-//            flag=0; 
-//         }
-//         else
-//         {
-//         if(p->lchild!=NULL)
-//         {
-//                 insertQueue(&q,p->lchild);
+    bool ans2;
+     char sttt[20]="evaluated";
+    insertQueue(&q,ptr);
+    while(!isQueueEmpty(&q)&& flag==1)
+    {
+        p=DeleteQueue(&q);
+        if(strcmp(p->status,sttt)!=0)
+        {
+           flag=0; 
+        }
+        else
+        {
+        if(p->lchild!=NULL)
+        {
+                insertQueue(&q,p->lchild);
             
-//         }
+        }
        
-//             if(p->rchild!=NULL)
-//         {
+            if(p->rchild!=NULL)
+        {
            
-//                 insertQueue(&q,p->rchild);
+                insertQueue(&q,p->rchild);
             
-//         }
+        }
         
 
-//         }
-       
-
-//     }
-//     if(flag==1)
-//     {
-//        ans=true;
-//     }
-//     else
-//     {
-//         ans=false;
-//     }
-//     return ans;
-// }
+        }
+      
+    }
+    if(flag==1)
+    {
+       ans=true;
+    }
+    else
+    {
+        ans=false;
+    }
+    return ans;
+}
 
 int numNodes=0;
 char stasta[20]="evaluated";
@@ -1419,10 +1391,8 @@ int countNodes(Assignment_Node* ptr)
     return ans;
 }
 
-
-
-
 //question 3b
+
 void evaluating_assignments(student_record* ptr)
 {
    AssignmentRecords* atrav;
@@ -1526,14 +1496,8 @@ void change_assign_status(AssignmentRecords* aptr)
 }
 
 
-
-
-
-
-
-
-
 //question 4
+
 void changeassignments(AssignmentRecords* ptr)
 {
     char str[20]="declared";
@@ -1551,7 +1515,10 @@ void changeassignments(AssignmentRecords* ptr)
 
 }
 
+
+
 //QUESTION 5
+
 void printDueStudentgroups(student_record* ptr)
 {
    char submission_date[11];
@@ -1591,6 +1558,8 @@ void printDueStudentgroups(student_record* ptr)
    }
 
 }
+
+
 
 //question 6
 void printEvalStudentGroups(student_record* ptr)
@@ -1682,6 +1651,8 @@ void subtreetraverse(Assignment_Node* nptr)
        subtreetraverse(nptr->rchild);
     }
 }
+
+
 //QUESTION 7
 
 void Assigntraverse(AssignmentRecords* ptr)
@@ -1729,8 +1700,6 @@ void Assigntraverse(AssignmentRecords* ptr)
     }
 }
 
-
-
 int max_marks=INT_MIN;
 int max_g_id;
 int arr[ARR_SIZE];
@@ -1759,12 +1728,6 @@ void highestMarks(Assignment_Node* lptr)
        highestMarks(lptr->rchild);
     }
 }
-
-
-
-
-
-
 
 //question 8
 void corresAssign(AssignmentRecords* ptr)
