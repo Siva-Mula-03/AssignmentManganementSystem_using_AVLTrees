@@ -1,4 +1,4 @@
-# AssignmentManganementSystem_using_AVLTrees
+# Assignment_Manganement_System_using_AVLTrees
 
 Assignment Management Software System
 You need to develop a system for managing student assignments and submissions. Assume 
